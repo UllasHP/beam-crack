@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+.container {
+  perspective: 800px;
+  perspective-origin: 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.beam {
+  position: relative;
+  width: 50px; /* Width of the beam */
+  height: 200px; /* Height of the beam */
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
+  background-color: 	#ffffff; /* Beam color */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.front {
+  background-color: 	#7E8274; /* Same color as the beam */
+}
+
+.back {
+  display: none; /* Hide the back face */
+}
+
+.left {
+  background-color: 	#7E8274; /* Same color as the beam */
+  transform: rotateY(-90deg) translateX(50%);
+}
+
+.right {
+  background-color: 	#7E8274; /* Same color as the beam */
+  transform: rotateY(90deg) translateX(-50%);
+}
+
+.top {
+  background-color: 	#7E8274; /* Same color as the beam */
+  transform: translateY(-50%) rotateX(90deg);
+}
+
+.bottom {
+  background-color: 	#7E8274; /* Same color as the beam */
+  transform: translateY(50%) rotateX(-90deg);
+}
+/* for a straight crack line */
+/*  .crack {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+} */
+
+/*for a slant crack line */
+.crack {
+position: absolute;
+width: 4px;
+height: 70px;
+top: 10px;
+left: 50%;
+transform: translateX(-50%) rotate(45deg); /* Adjust the rotation angle as needed */
+background-color: red;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d63636;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-text {
+  text-align: center;
+  flex-grow: 1; /* This will make the text take up the remaining space */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-links {
+  display: flex;
+}
+
+.social-links a {
+  margin-left: 10px;
+  font-size: 40px;
+  color: black;
+}
+
+.social-links a:first-child {
+  margin-left: 0;
 }
