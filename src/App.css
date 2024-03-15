@@ -72,12 +72,43 @@ transform: translateX(-50%) rotate(45deg); /* Adjust the rotation angle as neede
 background-color: red;
 }
 
+.navbar {
+  background-color: #eb0404; /* Choose your desired background color */
+  padding: 10px 0; /* Add padding for better visual appearance */
+}
+
+.navtxt {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navtxt li {
+  display: inline;
+  margin-right: 30px; /* Adjust spacing between navigation items */
+}
+
+.navtxt li:last-child {
+  margin-right: 0; /* Remove margin from last navigation item */
+}
+
+.navtxt li a {
+  color: rgb(15, 15, 15); /* Change the color of navigation links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.navtxt li a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+
+
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #d63636;
+  background-color: #eb1c5a;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
@@ -85,20 +116,31 @@ background-color: red;
 }
 
 .footer-text {
-  text-align: center;
+  margin-left: 30px;
   flex-grow: 1; /* This will make the text take up the remaining space */
 }
 
 .social-links {
   display: flex;
+  margin-right: 30px;
+
 }
 
 .social-links a {
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 40px;
   color: black;
 }
 
 .social-links a:first-child {
   margin-left: 0;
+}
+
+.btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(189, 6, 15);
+  border-radius: 5px;
+  height: 40px;
 }

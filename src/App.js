@@ -1,7 +1,24 @@
 import React from 'react';
 import './App.css';
+import TablePage from './TablePage';
+import { Link } from 'react-router-dom';
+
 import Footer from './Footer';
 
+
+class NavigationBar extends React.Component {
+  render() {
+    return (
+      <nav>
+        <ul className='navtxt'>
+          <li><a href="/TablePage.js">Results</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#Report">Report</a></li>
+        </ul>
+      </nav>
+    );
+  }
+}
 class BeamCrack extends React.Component {
   state = {
     isDragging: false,
@@ -47,10 +64,11 @@ class BeamCrack extends React.Component {
   render() {
     return (
       <div>
+        <NavigationBar />
         <div style={{ marginTop: '30px', textAlign: 'center' }}>
           <h1>VISUAL REPRESENTATION OF A CRACK IN THE BEAM</h1>
         </div>
-        <div style={{ marginTop: '60px' }} className="container">
+        <div style={{ marginTop: '80px' }} className="container">
           <div style={{ marginTop: '50px' }} className="beam" onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} onMouseMove={this.handleMouseMove}>
             <div className="face front"></div>
             <div className="face back"></div>
@@ -63,10 +81,8 @@ class BeamCrack extends React.Component {
         </div>
         <Footer />
       </div>
-      
     );
-  }
-  
+  } 
 }
 
 export default BeamCrack;
